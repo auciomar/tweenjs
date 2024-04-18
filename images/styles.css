@@ -1,0 +1,11 @@
+.container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.character {
+    background: url('images/character.png');
+    width: 150px;
+    height: 150px;
+}

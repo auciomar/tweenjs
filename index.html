@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Isaman Tween Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+  <div style="display: flex; justify-content: center;">
+    <div id="sprite" style="background: url('images/alien.jpg');"></div>
+  </div>
+
+  <!-- <img id="sprite" src="images/alien.jpg"> -->
+
+  <script>
+    window.onload = function () {
+      const NUM_FRAMES = 8;
+      var img = new Image();
+      var spriteDiv = document.getElementById('sprite');
+      img.onload = function () {
+        spriteDiv.style.width = this.width / NUM_FRAMES + 'px';
+        spriteDiv.style.height = this.height + 'px';
+      };
+      img.src = 'images/alien.jpg';
+
+      gsap.to("#sprite", {
+        backgroundPosition: "-1680px 0px", // adjust this based on your sprite sheet
+        ease: "steps(7)", // adjust this based on the number of frames in your sprite sheet
+        repeat: -1, // repeat indefinitely
+        duration: .7, // adjust this based on how fast you want the animation to be
+      });
+    };
+  </script>
+
+
+
+
+</body>
+
+</html>
